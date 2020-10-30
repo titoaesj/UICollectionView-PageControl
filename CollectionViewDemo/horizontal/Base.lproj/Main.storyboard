@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CollectionViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-Jd-uBZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="385"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Ib-Vg-iNb">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="faJ-dP-zY3">
+                                <rect key="frame" x="0.0" y="385" width="320" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDf-mJ-o73">
+                                        <rect key="frame" x="24" y="32.5" width="55" height="30"/>
+                                        <state key="normal" title="anterior"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRD-rw-fjd">
+                                        <rect key="frame" x="241" y="32.5" width="55" height="30"/>
+                                        <state key="normal" title="próximo"/>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-CO-VRK">
+                                        <rect key="frame" x="103" y="35" width="114" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xIc-CO-VRK" secondAttribute="height" multiplier="122:27" id="S9U-mC-UbP"/>
+                                        </constraints>
+                                        <color key="pageIndicatorTintColor" systemColor="systemGray6Color"/>
+                                        <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="centerX" secondItem="faJ-dP-zY3" secondAttribute="centerX" id="0m1-ss-M41"/>
+                                    <constraint firstItem="MDf-mJ-o73" firstAttribute="leading" secondItem="faJ-dP-zY3" secondAttribute="leading" constant="24" id="FrY-Xx-sss"/>
+                                    <constraint firstItem="dRD-rw-fjd" firstAttribute="leading" secondItem="xIc-CO-VRK" secondAttribute="trailing" constant="24" id="L6n-xI-RPn"/>
+                                    <constraint firstItem="dRD-rw-fjd" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="WOA-4u-oy0"/>
+                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="leading" secondItem="MDf-mJ-o73" secondAttribute="trailing" constant="24" id="YMb-mY-uHS"/>
+                                    <constraint firstItem="MDf-mJ-o73" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="fQv-0m-5gw"/>
+                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="pcm-lf-QI7"/>
+                                    <constraint firstAttribute="trailing" secondItem="dRD-rw-fjd" secondAttribute="trailing" constant="24" id="uh3-nZ-SMp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="faJ-dP-zY3" secondAttribute="bottom" id="3a1-6O-Keb"/>
+                            <constraint firstItem="faJ-dP-zY3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4El-r6-WQN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Auh-Jd-uBZ" secondAttribute="trailing" id="5dR-GS-EDI"/>
+                            <constraint firstItem="Auh-Jd-uBZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U9S-AG-igx"/>
+                            <constraint firstItem="Auh-Jd-uBZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UTv-2E-CpD"/>
+                            <constraint firstItem="faJ-dP-zY3" firstAttribute="top" secondItem="Auh-Jd-uBZ" secondAttribute="bottom" id="ce0-1m-h1H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="faJ-dP-zY3" secondAttribute="trailing" id="n2O-Bb-YDa"/>
+                            <constraint firstItem="Auh-Jd-uBZ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" constant="1" id="vEI-Tw-JqS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Auh-Jd-uBZ" id="XvP-wi-rRB"/>
+                        <outlet property="nextBtn" destination="dRD-rw-fjd" id="l6D-he-vYq"/>
+                        <outlet property="pageControl" destination="xIc-CO-VRK" id="0Hb-QK-bcX"/>
+                        <outlet property="previewBtn" destination="MDf-mJ-o73" id="4dy-bN-zD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="531.8840579710145" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
