@@ -39,25 +39,32 @@
                                         <rect key="frame" x="241" y="32.5" width="55" height="30"/>
                                         <state key="normal" title="próximo"/>
                                     </button>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-CO-VRK">
-                                        <rect key="frame" x="103" y="35" width="114" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="xIc-CO-VRK" secondAttribute="height" multiplier="122:27" id="S9U-mC-UbP"/>
-                                        </constraints>
-                                        <color key="pageIndicatorTintColor" systemColor="systemGray6Color"/>
-                                        <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
-                                    </pageControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-2w-daD">
+                                        <rect key="frame" x="103" y="16" width="114" height="63"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bml-Nh-pj7" customClass="ScrollingPageControl" customModule="CollectionViewDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="31"/>
+                                            </view>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xIc-CO-VRK">
+                                                <rect key="frame" x="0.0" y="32" width="114" height="31"/>
+                                                <color key="pageIndicatorTintColor" systemColor="systemGray6Color"/>
+                                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                                            </pageControl>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="centerX" secondItem="faJ-dP-zY3" secondAttribute="centerX" id="0m1-ss-M41"/>
                                     <constraint firstItem="MDf-mJ-o73" firstAttribute="leading" secondItem="faJ-dP-zY3" secondAttribute="leading" constant="24" id="FrY-Xx-sss"/>
-                                    <constraint firstItem="dRD-rw-fjd" firstAttribute="leading" secondItem="xIc-CO-VRK" secondAttribute="trailing" constant="24" id="L6n-xI-RPn"/>
+                                    <constraint firstItem="dRD-rw-fjd" firstAttribute="leading" secondItem="COQ-2w-daD" secondAttribute="trailing" constant="24" id="Fzm-0e-BlY"/>
+                                    <constraint firstItem="COQ-2w-daD" firstAttribute="centerX" secondItem="faJ-dP-zY3" secondAttribute="centerX" id="UDE-2i-Sio"/>
                                     <constraint firstItem="dRD-rw-fjd" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="WOA-4u-oy0"/>
-                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="leading" secondItem="MDf-mJ-o73" secondAttribute="trailing" constant="24" id="YMb-mY-uHS"/>
                                     <constraint firstItem="MDf-mJ-o73" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="fQv-0m-5gw"/>
-                                    <constraint firstItem="xIc-CO-VRK" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="pcm-lf-QI7"/>
+                                    <constraint firstAttribute="bottom" secondItem="COQ-2w-daD" secondAttribute="bottom" constant="16" id="m4N-qF-tMr"/>
+                                    <constraint firstItem="COQ-2w-daD" firstAttribute="centerY" secondItem="faJ-dP-zY3" secondAttribute="centerY" id="re9-AL-Yvp"/>
                                     <constraint firstAttribute="trailing" secondItem="dRD-rw-fjd" secondAttribute="trailing" constant="24" id="uh3-nZ-SMp"/>
+                                    <constraint firstItem="COQ-2w-daD" firstAttribute="top" secondItem="faJ-dP-zY3" secondAttribute="top" constant="16" id="vb9-g4-IZj"/>
+                                    <constraint firstItem="COQ-2w-daD" firstAttribute="leading" secondItem="MDf-mJ-o73" secondAttribute="trailing" constant="24" id="xXw-U3-yvL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -78,12 +85,13 @@
                         <outlet property="collectionView" destination="Auh-Jd-uBZ" id="XvP-wi-rRB"/>
                         <outlet property="nextBtn" destination="dRD-rw-fjd" id="l6D-he-vYq"/>
                         <outlet property="pageControl" destination="xIc-CO-VRK" id="0Hb-QK-bcX"/>
+                        <outlet property="pageControlCustom" destination="Bml-Nh-pj7" id="isc-jB-UUL"/>
                         <outlet property="previewBtn" destination="MDf-mJ-o73" id="4dy-bN-zD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531.8840579710145" y="114.50892857142857"/>
+            <point key="canvasLocation" x="530.625" y="113.75"/>
         </scene>
     </scenes>
     <resources>

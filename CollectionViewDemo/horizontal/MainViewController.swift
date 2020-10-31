@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var previewBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var pageControlCustom: ScrollingPageControl!
     
     let maxPage = 10
     
@@ -25,21 +26,18 @@ class MainViewController: UIViewController {
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
         
-//        let screenSize: CGRect = UIScreen.main.bounds
         if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
-//            layout.estimatedItemSize = CGSize(width: self.collectionView.frame.size.width, height: self.collectionView.frame.size.height)
         }
         
         self.pageControl.numberOfPages = maxPage
+        self.previewBtn.addTarget(self, action: #selector(handleNextPage), for: .touchUpInside)
+        self.previewBtn.tag = 0
+        self.nextBtn.addTarget(self, action: #selector(handleNextPage), for: .touchUpInside)
+        self.nextBtn.tag = 1
         
-        previewBtn.addTarget(self, action: #selector(handleNextPage), for:
-                                .touchUpInside)
-        previewBtn.tag = 0
         
-        nextBtn.addTarget(self, action: #selector(handleNextPage), for:
-                            .touchUpInside)
-        nextBtn.tag = 1
+        self.pageControlCustom.pages = maxPage
         
         
     }
@@ -96,6 +94,20 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollPos = scrollView.contentOffset.x / view.frame.width
         pageControl.currentPage = Int(scrollPos)
+        
+        let page = round(scrollView.contentOffset.x / scrollView.frame.width)
+        pageControlCustom.selectedPage = Int(page)
+    }
+    
+}
+
+extension MainViewController : ScrollingPageControlDelegate {
+    
+    func viewForDot(at index: Int) -> UIView? {
+        guard index == 0 else { return nil }
+        let view = TriangleView()
+        view.isOpaque = false
+        return view
     }
     
 }
